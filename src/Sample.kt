@@ -11,8 +11,12 @@ fun isPrime(x:Long): Boolean{
     return true
 }
 fun main() {
-    for (i in 1L..20L) {
-        var n = (10.0.pow(i.toDouble()) / 9).toLong()
+    var n:Long = 0
+    for (i in 0L..18L) {
+        // 1+10+100+...の方法で1の連続数を作る
+        var m = 10.0.pow(i.toDouble()).toLong()
+        n = n+m
         println("%d %b".format(n, isPrime(n)))
+        //if (isPrime(n)==true) println("%d".format(n))
     }
 }
