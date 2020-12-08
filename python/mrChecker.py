@@ -1,8 +1,10 @@
 import math
+import time
+import sympy
 
 a_sample=[2, 3, 5, 7, 11, 13,17,31,61,73]
 
-def checkNum(num): 
+def checkNum(num):
     s,d=0,num-1
     assert(d>0)
     while(d%2==0):
@@ -22,11 +24,11 @@ def myPow(x,y,n):
     return result
 
 def miillerTest(d, num, a):
-    x = myPow(a, d, num)
+    x = pow(a, d, num)
     if (x == 1 or x == num-1):
         return True
     while(d != num-1):
-        x = (x**2)%num
+        x = pow(x,2,num)
         d*=2
         if(x==1): return False
         if(x==num-1): return True
@@ -44,8 +46,12 @@ def isPrime(num):
     return True
 
 if __name__ == "__main__":
-    for i in range(24):
-        tmp = (10**i-1)//9
-        print(tmp,isPrime(tmp))
-        
+    start = time.time()
+    p_g = sympy.primerange(2,318)
 
+    for i in p_g:
+        tmp = (10**i-1)//9
+        if isPrime(tmp) == True:
+            print(i)
+    elapsed_time = time.time() - start
+    print(elapsed_time)
