@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  kt:
+    image: zenika/kotlin:latest
+    container_name: kotlin_container
+    working_dir: /app
+    volumes:
+      - ./src:/app

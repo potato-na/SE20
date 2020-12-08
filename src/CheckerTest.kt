@@ -163,13 +163,50 @@ class CheckerTest {
         println("Test012 is OK!")
     }
 
+      /**
+     *  @author Wataru 2020/12/07
+     * Check perfect number less than 10000 are not a prime number.
+     */
+    fun CheckerTest13(){
+        val cnum = listOf(6L, 28L, 496L, 8128L)
+        for (num in cnum){
+            assertFalse { c_.isPrime(num) }
+            assertFalse { c_.isPrimeRepunit(num.toBigInteger()) }
+        }
+        println("Test013 is OK!")
+    }
+
+    /**
+     * @author Naoki Motoyama 2020/12/07
+     * Check the Narcissistic Numbers from 3 to 10 digits. 
+     */
+    fun CheckerTest14() {
+        val cnum = listOf(153L, 370L, 371L, 407L, 1634L, 8208L, 9478L, 54748L, 92727L, 93084L, 548834L, 1741725L, 4210818L, 9800817L, 9926315L, 24678050L, 24678051L, 88593477L, 146511208L, 472335975L, 534494836L, 912985153L, 4679307774L)
+        for (num in cnum){
+            assertFalse { c_.isPrime(num) }
+            assertFalse { c_.isPrimeRepunit(num.toBigInteger()) }
+        }
+        println("Test014 is OK!")
+    }
+
     fun binPowTest01(){
         assertEquals(c_.binPow(2.toBigInteger(),9.toBigInteger(),1000.toBigInteger()),512.toBigInteger())
         assertEquals(c_.binPow(6.toBigInteger(),5.toBigInteger(),31.toBigInteger()),26.toBigInteger())
         assertEquals(c_.binPow(111111111.toBigInteger(),11111111111.toBigInteger(),1000000007.toBigInteger()),249517433.toBigInteger())
         println("Test005 is OK!")
     }
-
+    /**
+     *  @author Mie Hayashi 2020/12/08
+     * Check first six integer multiples of the cyclic number "142857" are not a prime number.
+     */
+    fun CheckerTest15(){
+        val cnum = listOf(142857L, 285714L, 428571L, 571428L, 714285L, 857142L)
+        for (num in cnum){
+            assertFalse { c_.isPrime(num) }
+            assertFalse { c_.isPrimeRepunit(num.toBigInteger()) }
+        }
+        println("Test015 is OK!")
+    }
 }
 
 fun main(args: Array<String>){
@@ -185,5 +222,8 @@ fun main(args: Array<String>){
     ctest.CheckerTest10()
     ctest.CheckerTest11()
     ctest.CheckerTest12()
+    ctest.CheckerTest13()
+    ctest.CheckerTest14()
     ctest.binPowTest01()
+    ctest.CheckerTest15()
 }
