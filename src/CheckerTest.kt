@@ -219,6 +219,18 @@ class CheckerTest {
         }
         println("Test016 is OK!")
     }
+    /**
+    *   @author Keita Takami 2020/12/08
+    * Check Cullen number between 2 and 10000
+    */
+        fun CheckerTest17() {
+        val cnum = listOf(3L, 9L, 25L, 65L, 161L, 385L, 897L, 2049L, 4609L)
+        for (num in cnum) {
+            assertFalse { c_.isPrime(num) }
+            assertFalse { c_.isPrimeRepunit(num.toBigInteger()) }
+        }
+        println("Test017 is OK!")
+    }
 }
 
 fun main(args: Array<String>){
@@ -239,4 +251,5 @@ fun main(args: Array<String>){
     ctest.binPowTest01()
     ctest.CheckerTest15()
     ctest.CheckerTest16()
+    ctest.CheckerTest17()
 }
