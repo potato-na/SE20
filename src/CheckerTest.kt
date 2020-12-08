@@ -207,6 +207,18 @@ class CheckerTest {
         }
         println("Test015 is OK!")
     }
+    /**
+    *   @author Alexandre Missler 2020/12/08
+    * Check Euler-Jacobi psudoprime in prime base 97 for numbers lower than 10000
+    */
+        fun CheckerTest16() {
+        val cnum = listOf(49L, 105L, 341L, 469L, 481L, 949L, 973L, 1065L, 2701L, 3283L, 3577L, 4187L, 4371L, 4705L, 6811L, 8023L, 8119L, 8911L, 9313L)
+        for (num in cnum) {
+            assertFalse { c_.isPrime(num) }
+            assertFalse { c_.isPrimeRepunit(num.toBigInteger()) }
+        }
+        println("Test016 is OK!")
+    }
 }
 
 fun main(args: Array<String>){
@@ -226,4 +238,5 @@ fun main(args: Array<String>){
     ctest.CheckerTest14()
     ctest.binPowTest01()
     ctest.CheckerTest15()
+    ctest.CheckerTest16()
 }
