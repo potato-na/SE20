@@ -6,4 +6,5 @@ services:
     container_name: kotlin_container
     working_dir: /app
     volumes:
-      - ./src:/app
+      # - ./src:/app
+      - .:/app
