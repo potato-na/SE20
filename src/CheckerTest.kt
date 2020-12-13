@@ -176,13 +176,61 @@ class CheckerTest {
         println("Test013 is OK!")
     }
 
+    /**
+     * @author Naoki Motoyama 2020/12/07
+     * Check the Narcissistic Numbers from 3 to 10 digits. 
+     */
+    fun CheckerTest14() {
+        val cnum = listOf(153L, 370L, 371L, 407L, 1634L, 8208L, 9478L, 54748L, 92727L, 93084L, 548834L, 1741725L, 4210818L, 9800817L, 9926315L, 24678050L, 24678051L, 88593477L, 146511208L, 472335975L, 534494836L, 912985153L, 4679307774L)
+        for (num in cnum){
+            assertFalse { c_.isPrime(num) }
+            assertFalse { c_.isPrimeRepunit(num.toBigInteger()) }
+        }
+        println("Test014 is OK!")
+    }
+
     fun binPowTest01(){
         assertEquals(c_.binPow(2.toBigInteger(),9.toBigInteger(),1000.toBigInteger()),512.toBigInteger())
         assertEquals(c_.binPow(6.toBigInteger(),5.toBigInteger(),31.toBigInteger()),26.toBigInteger())
         assertEquals(c_.binPow(111111111.toBigInteger(),11111111111.toBigInteger(),1000000007.toBigInteger()),249517433.toBigInteger())
         println("Test005 is OK!")
     }
-
+    /**
+     *  @author Mie Hayashi 2020/12/08
+     * Check first six integer multiples of the cyclic number "142857" are not a prime number.
+     */
+    fun CheckerTest15(){
+        val cnum = listOf(142857L, 285714L, 428571L, 571428L, 714285L, 857142L)
+        for (num in cnum){
+            assertFalse { c_.isPrime(num) }
+            assertFalse { c_.isPrimeRepunit(num.toBigInteger()) }
+        }
+        println("Test015 is OK!")
+    }
+    /**
+    *   @author Alexandre Missler 2020/12/08
+    * Check Euler-Jacobi psudoprime in prime base 97 for numbers lower than 10000
+    */
+        fun CheckerTest16() {
+        val cnum = listOf(49L, 105L, 341L, 469L, 481L, 949L, 973L, 1065L, 2701L, 3283L, 3577L, 4187L, 4371L, 4705L, 6811L, 8023L, 8119L, 8911L, 9313L)
+        for (num in cnum) {
+            assertFalse { c_.isPrime(num) }
+            assertFalse { c_.isPrimeRepunit(num.toBigInteger()) }
+        }
+        println("Test016 is OK!")
+    }
+    /**
+    *   @author Keita Takami 2020/12/08
+    * Check Cullen number between 2 and 10000
+    */
+        fun CheckerTest17() {
+        val cnum = listOf(3L, 9L, 25L, 65L, 161L, 385L, 897L, 2049L, 4609L)
+        for (num in cnum) {
+            assertFalse { c_.isPrime(num) }
+            assertFalse { c_.isPrimeRepunit(num.toBigInteger()) }
+        }
+        println("Test017 is OK!")
+    }
 }
 
 fun main(args: Array<String>){
@@ -199,5 +247,9 @@ fun main(args: Array<String>){
     ctest.CheckerTest11()
     ctest.CheckerTest12()
     ctest.CheckerTest13()
+    ctest.CheckerTest14()
     ctest.binPowTest01()
+    ctest.CheckerTest15()
+    ctest.CheckerTest16()
+    ctest.CheckerTest17()
 }
