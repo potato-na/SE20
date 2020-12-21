@@ -1,5 +1,4 @@
 class MersenneTwister {
-
     /* Period parameters */
     var N = 624
     var M = 397
@@ -12,10 +11,9 @@ class MersenneTwister {
 
     /* initializes mt[N] with a seed */
     fun init_genrand(s:Long){
-        mt[0]= s and 0xffffffffL
+        mt[0] = s and 0xffffffffL
         for (mti in 1..N-1) {
-            mt[mti] =
-                    (1812433253L * (mt[mti-1]!! xor mt[mti-1]!!.shr(30)) + mti)
+            mt[mti] = (1812433253L * (mt[mti-1]!! xor mt[mti-1]!!.shr(30)) + mti)
             /* See Knuth TAOCP Vol2. 3rd Ed. P.106 for multiplier. */
             /* In the previous versions, MSBs of the seed affect   */
             /* only MSBs of the array mt[].                        */
@@ -35,28 +33,25 @@ class MersenneTwister {
         var j = 0
         var k = if (N>key_length) N else key_length
         for (ki in k downTo 1) {
-            mt[i] = (mt[i]!! xor ((mt[i-1]!! xor mt[i-1]!!.shr(30)) * 1664525L))
-            + init_key[j] + j /* non linear */
+            mt[i] = (mt[i]!! xor ((mt[i-1]!! xor mt[i-1]!!.shr(30)) * 1664525L)) + init_key[j] + j /* non linear */
             mt[i] = (mt[i]!! and 0xffffffffL) /* for WORDSIZE > 32 machines */
             i += 1
             j += 1
-            if (i>=N) {
-                mt[0] = mt[N - 1]
+            if (i >= N) {
+                mt[0] = mt[N-1]
                 i = 1
             }
-            if (j>=key_length) j = 0
+            if (j >= key_length) j = 0
         }
         for (ki in N-1 downTo 1) {
-            mt[i] = (mt[i]!! xor ((mt[i-1]!! xor mt[i-1]!!.shr(30)) * 1566083941L))
-            - i /* non linear */
+            mt[i] = (mt[i]!! xor ((mt[i-1]!! xor mt[i-1]!!.shr(30)) * 1566083941L)) - i /* non linear */
             mt[i] = (mt[i]!! and 0xffffffffL) /* for WORDSIZE > 32 machines */
             i += 1
-            if (i>=N) {
+            if (i >= N) {
                 mt[0] = mt[N-1]
                 i = 1
             }
         }
-
         mt[0] = 0x80000000L /* MSB is 1; assuring non-zero initial array */
     }
 
@@ -84,7 +79,6 @@ class MersenneTwister {
             }
             y = (mt[N-1]!! and UPPER_MASK) or (mt[0]!! and LOWER_MASK)
             mt[N-1] = mt[M-1]!! xor y.shr(1) xor mag01[(y and 0x1L).toInt()]
-
             mti = 0
         }
 
