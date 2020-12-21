@@ -6,37 +6,37 @@ fun main() {
     mt.init_by_array(init, length)
     println("%d outputs of genrand_int32()".format(max))
     for (i in 0..max-1) {
-        println("%10d ".format(mt.genrand_int32()))
+        print("%10d ".format(mt.genrand_int32()))
         if (i % 5 == 4) println("")
     }
 
     println("%d outputs of genrand_int31()".format(max))
     for (i in 0..max-1) {
-        println("%10d ".format(mt.genrand_int31()))
+        print("%10d ".format(mt.genrand_int31()))
         if (i % 5 == 4) println("")
     }
 
     println("%d outputs of genrand_real1()".format(max))
     for (i in 0..max-1) {
-        println("%10.8f ".format(mt.genrand_real1()))
+        print("%10.8f ".format(mt.genrand_real1()))
         if (i % 5 == 4) println("")
     }
 
     println("%d outputs of genrand_real2()".format(max))
     for (i in 0..max-1) {
-        println("%10.8f ".format(mt.genrand_real2()))
+        print("%10.8f ".format(mt.genrand_real2()))
         if (i % 5 == 4) println("")
     }
 
     println("%d outputs of genrand_real3()".format(max))
     for (i in 0..max-1) {
-        println("%10.8f ".format(mt.genrand_real3()))
+        print("%10.8f ".format(mt.genrand_real3()))
         if (i % 5 == 4) println("")
     }
 
     println("%d outputs of genrand_res53()".format(max))
     for (i in 0..max-1) {
-        println("%10.8f ".format(mt.genrand_res53()))
+        print("%10.8f ".format(mt.genrand_res53()))
         if (i % 5 == 4) println("")
     }
 }

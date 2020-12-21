@@ -1,12 +1,8 @@
 version: '3'
 services:
-  kotlin:
+  kt:
     image: zenika/kotlin:latest
     container_name: kotlin_container
     working_dir: /app
     volumes:
-<<<<<<< HEAD
-      # - ./src:/app
-=======
->>>>>>> hayashi2
       - .:/app
