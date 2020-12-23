@@ -6,13 +6,13 @@ import kotlin.math.*
 
 fun perfect_Christmas_tree(h: Int) {
     print("Number of baubles: ")
-        println((sqrt(17.0) / 20 * h).roundToInt())
-        print("Height of star or fairy (cm): ")
-        println((h / 10))
-        print("Length of tinsel (cm): ")
-        println((13 * PI / 8 * h).roundToInt())
-        print("Length of lights (cm): ")
-        println((PI * h).roundToInt())
+    println((sqrt(17.0) / 20 * h).roundToInt())
+    print("Height of star or fairy (cm): ")
+    println((h / 10))
+    print("Length of tinsel (cm): ")
+    println((13 * PI / 8 * h).roundToInt())
+    print("Length of lights (cm): ")
+    println((PI * h).roundToInt())
 }
 
 fun main() {
