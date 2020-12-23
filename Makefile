@@ -21,6 +21,14 @@ compile/CheckerTest:
 run/CheckerTest:
 	docker-compose run ${SERVICE_NAME} kotlin -cp lib/${IMPORT_TEST}:src/CheckerTest.jar CheckerTestKt
 
+.PHONY: compile/MTtest
+compile/MTtest:
+	docker-compose run ${SERVICE_NAME} kotlinc src/MTtest.kt src/MersenneTwister.kt -include-runtime -d src/MTtest.jar
+
+.PHONY: run/MTtest
+run/MTtest:
+	docker-compose run ${SERVICE_NAME} kotlin -cp src/MTtest.jar MTtestKt
+
 .PHONY: down
 down:
 	docker-compose down
