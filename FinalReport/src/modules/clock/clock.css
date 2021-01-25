@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
+
+html{
+    height: 100%;
+    padding:0;
+    margin:0;
+}
+
+body
+{
+    height: 100%;
+    padding:0;
+    margin:0;
+    color: white;
+    background-color: black;
+}
+
+div#clock_frame
+{
+    height: 100%;
+    width: 100%;
+}
+
+span
+{
+    display: block;
+    float: center;
+    width: 95%;
+    font-family: 'Kosugi', sans-serif;
+}
+
+span#clock_date
+{
+    /* この要素の中におけるテキストを右詰めにする デフォルト値のtext-align:leftを上書き */
+    text-align: right;
+    /* フォントの大きさを親要素であるdivで設定されたサイズ(px)の0.5倍にする */
+    font-size: 0.5em;
+    /* 右のパディングの幅を親要素であるdivで設定されたフォントサイズ(px)の0.5倍にする */
+    padding-right: 0.5em;
+}
+
+/* id="clock_time" のspan要素 */
+span#clock_time
+{
+    /* フォントの大きさを親要素であるdivで設定されたサイズ(px)の2倍にする */
+    font-size: 2.4em;
+    padding-left: 0em;
+    text-align: center;
+}
+

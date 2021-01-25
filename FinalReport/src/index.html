@@ -1,0 +1,28 @@
+<!-- https://qiita.com/ukkz/items/07d69c83be1112f10c29 -->
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>SmartMirror</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src='js/gesture.js' defer></script> 
+    <script src="js/indicator.js" defer></script>
+  </head>
+
+  <body>
+    <!-- indicator -->
+    <div id="indicator">
+      <canvas id="indicator_canvas"></canvas>
+    </div>
+    
+    <!-- module  -->
+    <div id='module'>
+      <iframe src='modules/default/default.html' id='iframe_module'></iframe>
+      <!-- <iframe src='modules/clock/clock.html' id='iframe_module'></iframe> -->
+      <!-- <iframe src='modules/calendar/calendar.html' id='iframe_module'></iframe> -->
+      <!-- <iframe src='modules/weather/weather.html' id='iframe_module'></iframe> -->
+      <!-- <iframe src='modules/test_gesture/test_gesture.html' id='iframe_module'></iframe> -->
+    </div> 
+  </body>
+</html>

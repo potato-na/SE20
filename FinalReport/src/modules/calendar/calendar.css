@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
+
+html{
+    height: 90%;
+    padding:0;
+    margin:0;
+    font-family: 'Kosugi', sans-serif;
+}
+
+body
+{
+    height: 100%;
+    padding:0;
+    margin:0;
+    color: white;
+    background-color: black;
+}
+
+.wrapper {
+    margin: 15px auto;
+    max-width: 700px;
+}
+
+.calendar_frame {
+    height: 100%;
+    width: 100%;
+}
+
+
+/*calendar_frameの90%*/
+.table_calendar {
+    border-collapse: collapse;
+    width: 100%;
+    height: 90%;
+}
+
+.table_calendar th, 
+.table_calendar td{
+    font-size: 4em;
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+}
+
+/* 現在の日付 */
+.date_picker.selected{
+    font-weight: bold;
+}
+.date_picker.selected span {
+    border-top: 5px solid red;
+    border-bottom: 5px solid red;
+    border-left: 5px solid red;
+    border-right: 5px solid red;
+    border-radius: 50%;
+    /* background: white; */
+    
+}
+
+/* 日曜 */
+.date_picker:nth-child(1) {
+    color: red;
+}
+
+/* 土曜 */
+.date_picker:nth-child(7) {
+    color: blue;
+}
+
+/*calendar_frameの10%*/
+#month_and_year {
+    height: 10%; 
+}
+
+p.hmonth {
+    width: 2.0em;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 50px;
+    text-align: left;
+    float: left;
+}
+p.hyear {
+    height: 8.0em;
+    width: 95%;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 200px;
+    text-align: right;
+}
+
+span.hmonth {
+    font-size: 8.0em;
+}
+
+span.hyear {
+    font-size: 4.0em;
+}

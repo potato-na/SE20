@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
+
+html{
+    height: 100%;
+    width: 100%;
+    padding:0;
+    margin:0;
+}
+
+body
+{
+    height: 100%;
+    width: 100%;
+    padding:0;
+    margin:0;
+    color: white;
+    background-color: black;
+}
+
+.weather_frame{
+    height: 85%;
+    width: 100%;
+
+}
+
+#description {
+    height: 100%;
+    text-align: center;
+}
+
+#icon {
+    width: auto;
+    text-align: center;
+}
+
+#icon_place{
+    height: 100%;
+}
+
+#date{
+    font-size: 2em;
+}
+
+#location{
+    font-size: 3em;
+}
+
+
+#telop{
+    font-size: 6em;
+    padding: 50px;
+}
+
+#desc{
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 3em;
+}
+
+@media (min-width: 500px) {
+    .weather_frame {
+        display: flex;
+    }
+    #description {
+        width: 50%;
+        flex-grow: 1;
+    }
+    #icon {
+        width: 50%;
+        flex-grow: 1;
+    }
+}
